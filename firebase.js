@@ -1,5 +1,11 @@
-import { initializeApp } from 'firebase/app';
-import firebase from 'firebase/compat';
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+// import {FieldValue} from 'firebase'
+import "firebase/compat/auth";
+import "firebase/compat/storage";
+import { getAuth } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
+
 const firebaseConfig = {
     apiKey: "AIzaSyC5EzbEqJlPePhOsuoXtC9dwzsM_R_3NSc",
     authDomain: "whatsapp-next-2a03d.firebaseapp.com",
@@ -15,8 +21,8 @@ firebase.initializeApp(firebaseConfig) : firebase.app();
 
 const db = app.firestore()
 
-const auth = app.auth()
+const auth = app.auth();
 
-const provider = new firebase.auth.GoogleAuthProvider()
+const provider = new GoogleAuthProvider()
 
 export { db, auth, provider }
